@@ -1,0 +1,199 @@
+
+Clubinho
+Go (Golang)
+
+Thiago Pisani
+https://github.com/tpisani
+
+
+* Prólogo
+
+
+* Origem
+
+Foi criada em 2009, criada por Rob Pike, Ken Thompson, Robert Griesemer e outros desenvolvedores do Google.
+
+.image images/authors.png _ 550
+
+
+* "Manifesto"
+
+Here at Google, we believe programming should be fast, productive, and most importantly, fun. That's why we're excited to open source an experimental new language called Go. Go combines the development speed of working in a dynamic language like Python with the performance and safety of a compiled language like C or C++. Typical builds feel instantaneous; even large binaries compile in just a few seconds. And the compiled code runs close to the speed of C. Go lets you move fast. [...]
+
+[[https://opensource.googleblog.com/2009/11/hey-ho-lets-go.html]]
+
+
+* Características
+
+
+* Características principais
+
+- Linguagem compilada
+- Tipagem estática
+- Garbage collector
+- Concorrência nativa
+
+
+* Hello, World!
+
+.play examples/hello.go
+
+: Comentar o playground não reflete os tempos de compilação e execução reais.
+
+
+* Tipagem
+
+
+* Variáveis & Funções
+
+.play examples/vars.go
+
+
+* Inferência automática
+
+Embora a *tipagem* seja *forte*e*estática*, é possível declarar variáveis sem explicitar seu tipo. O *compilador*infere*automáticamente* o tipo da variável pelo valor atribuído.
+
+.play examples/short_vars.go
+
+
+* Identificador "branco"
+
+Ou _blank_identifier_ `_`, permite que valores sejam ignorados, já que o compilador *trata*imports*e*variáveis*não*utilizadas*como*erros*.
+
+.play -edit examples/blank.go
+
+
+* Structs
+
+Estruturas são definidas com um `struct`, *não*existem*classes*.
+
+.code examples/struct.go /^type/,/^}/
+
+: Citar a diferença de paradigma da orientação à objetos.
+: - Herança vs. Composição.
+: - Interfaces.
+
+
+* Structs (métodos)
+
+Structs podem implementar métodos.
+
+.play examples/struct.go HLMETHOD
+
+
+* Interfaces
+
+A definição de uma `interface` é bem parecida com a definição de um `struct` e, como esperado, descreve um comportamento que deve ser cumprido.
+
+.code examples/interface.go /^type/,/^}/
+
+A diferença é que para implementar uma interface basta ter uma implementação para cada assinatura da interface, isso não é declarado explicitamente.
+
+: Citar as vantagens disso.
+: Maior flexibilidade ao refatorar.
+: Capacidade de "abstrair" código externo (de terceiros).
+
+
+* Interfaces (exemplo)
+
+.play examples/interface.go HLINTERFACE
+
+
+* Escopo
+
+
+* Nomes exportados
+
+No Go existem nomes *exportados* e *não*exportados*. Um nome é exportado se começar com uma letra maiúscula, isso determina se o mesmo será visível fora do pacote no qual ele existe.
+
+.code examples/scope.go
+
+É importante ressaltar que *dentro*de*um*mesmo*pacote,*tudo*é*visível*.
+
+: Deixar claro que partes do código foram omitidas.
+: Mostrar que "pacotes" são "diretórios".
+
+
+* Nomes exportados (exemplo)
+
+.play examples/scope_right.go
+
+vs.
+
+.play examples/scope_wrong.go
+
+
+* Nomes exportados (structs)
+
+
+As regras de "exportação" também se aplicam aos campos de um `struct`.
+
+.code examples/unexported_struct_fields.go
+
+
+* Tratamento de erros
+
+
+* Erros são valores
+
+Um erro é indicado por um dos valores retornados por uma função. É possível ignorá-los utilizando o _identificador_branco_, embora seja melhor sempre tratá-los.
+
+.play examples/err.go
+
+Retornar um valor _vazio_ caso ocorra um erro é considerado uma boa prática.
+
+: Ressaltar a importância do tratamento de errors.
+
+
+* defer, panic & recover
+
+Porém, existe um mecanismo de recuperação em caso de *falhas*críticas*. Semelhante ao tratamento de exceções.
+
+.play examples/defer_panic_recover.go
+
+: Deve ser utilizado somente para casos em que retornar um erro da forma simples não seja possível.
+
+
+* Concorrência
+
+
+* Concorrência nativa
+
+O mecanismo de concorrência foi construído como parte linguagem.
+
+.play examples/concurrency.go
+
+: Explicar o nome "goroutine".
+: Mencionar a adaptação para quantidade de CPUs disponíveis.
+
+
+* Channels
+
+Servem, a princípio, para comunicação entre `goroutines`.
+
+.play examples/channels.go
+
+: Mencionar buffered channels.
+
+
+* Links úteis
+
+.link https://tour.golang.org A Tour of Go
+
+.link https://golang.org/doc/effective_go.html Effective Go
+
+.link https://play.golang.org Playground
+
+.link https://golang.org/doc/install Instalação
+
+.link https://golang.org/doc/ Documentação
+
+.link https://golang.org/doc/faq FAQ
+
+.link https://golanglibs.com Bibliotecas & Frameworks
+
+.link http://libs.club/golang/ Bibliotecas & Frameworks II
+
+.link https://awesome-go.com/ Bibliotecas & Frameworks III
+
+.link https://github.com/gtank/cryptopasta CryptoPasta
