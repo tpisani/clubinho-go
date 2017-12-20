@@ -11,7 +11,7 @@ https://github.com/tpisani
 
 * Origem
 
-Foi criada em 2009, criada por Rob Pike, Ken Thompson, Robert Griesemer e outros desenvolvedores do Google.
+Foi criada em 2009, por Rob Pike, Ken Thompson, Robert Griesemer e outros desenvolvedores do Google.
 
 .image images/authors.png _ 550
 
@@ -101,6 +101,8 @@ A diferença é que para implementar uma interface basta ter uma implementação
 
 * Escopo
 
+: No sentindo de visibilidade de pacotes, métodos e variáveis.
+
 
 * Nomes exportados
 
@@ -110,7 +112,6 @@ No Go existem nomes *exportados* e *não*exportados*. Um nome é exportado se co
 
 É importante ressaltar que *dentro*de*um*mesmo*pacote,*tudo*é*visível*.
 
-: Deixar claro que partes do código foram omitidas.
 : Mostrar que "pacotes" são "diretórios".
 
 
@@ -149,7 +150,7 @@ Retornar um valor _vazio_ caso ocorra um erro é considerado uma boa prática.
 
 Porém, existe um mecanismo de recuperação em caso de *falhas*críticas*. Semelhante ao tratamento de exceções.
 
-.play examples/defer_panic_recover.go
+.play -edit examples/defer_panic_recover.go
 
 : Deve ser utilizado somente para casos em que retornar um erro da forma simples não seja possível.
 

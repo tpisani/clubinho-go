@@ -34,5 +34,5 @@ func main() {
 	fmt.Println("Try opening the following URLs on your browser:")
 	fmt.Println("http://localhost:8000/<username>/")
 	fmt.Println("http://localhost:8000/<username>/json/")
-	http.ListenAndServe(":8000", r)
+	http.ListenAndServe(addr, r)
 }

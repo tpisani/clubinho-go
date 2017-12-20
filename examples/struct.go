@@ -9,10 +9,10 @@ type Person struct {
 }
 
 func (p Person) Speak() string { // HLMETHOD
-	return fmt.Sprintf("My name is %s", p.Name) // HLMETHOD
+	return fmt.Sprintf("My name is %s.", p.Name) // HLMETHOD
 } // HLMETHOD
 
 func main() {
-	john := &Person{Name: "John"}
+	john := Person{Name: "John"}
 	fmt.Println(john.Speak()) // HLMETHOD
 }
