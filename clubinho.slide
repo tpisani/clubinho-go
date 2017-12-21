@@ -49,6 +49,13 @@ Here at Google, we believe programming should be fast, productive, and most impo
 .play examples/vars.go
 
 
+* Funções de primeira classe
+
+Funções podem ser atribuídas à variáveis e retornadas por outras funções.
+
+.play examples/first_class_functions.go
+
+
 * Inferência automática
 
 Embora a *tipagem* seja *forte*e*estática*, é possível declarar variáveis sem explicitar seu tipo. O *compilador*infere*automáticamente* o tipo da variável pelo valor atribuído.
