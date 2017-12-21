@@ -51,7 +51,7 @@ Here at Google, we believe programming should be fast, productive, and most impo
 
 * Funções de primeira classe
 
-Funções podem ser atribuídas à variáveis e retornadas por outras funções.
+Funções podem ser retornadas por outras funções e atribuídas à variáveis.
 
 .play examples/first_class_functions.go
 
