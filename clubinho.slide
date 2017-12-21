@@ -201,6 +201,23 @@ Servem, a princípio, para comunicação entre `goroutines`.
 : Mencionar buffered channels.
 
 
+* Demos
+
+
+* Servidor HTTP
+
+Exemplo de um servidor HTTP simples que retorna uma mensagem para o usuário.
+
+.link https://github.com/tpisani/clubinho-go/blob/master/demo/server.go
+
+
+* Concorrência
+
+Exemplo de requisições HTTP em paralelo.
+
+.link https://github.com/tpisani/clubinho-go/blob/master/demo/concurrency.go
+
+
 * Links úteis
 
 .link https://tour.golang.org A Tour of Go
