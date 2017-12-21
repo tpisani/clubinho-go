@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func seq(n int) chan int {
+func seq(n int) <-chan int {
 	c := make(chan int)
 	go func() {
 		for i := 0; i < n; i++ {

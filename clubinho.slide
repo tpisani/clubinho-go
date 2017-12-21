@@ -81,6 +81,13 @@ Structs podem implementar métodos.
 .play examples/struct.go HLMETHOD
 
 
+* Structs (embedding)
+
+Structs podem conter outras structs anônimas. Isso faz com que ela possua todos os métodos e atributos desses structs _embedados_, embora não seja uma herança propriamente dita.
+
+.code examples/struct_embedding.go HLMETHOD
+
+
 * Interfaces
 
 A definição de uma `interface` é bem parecida com a definição de um `struct` e, como esperado, descreve um comportamento que deve ser cumprido.
@@ -97,6 +104,16 @@ A diferença é que para implementar uma interface basta ter uma implementação
 * Interfaces (exemplo)
 
 .play examples/interface.go HLINTERFACE
+
+
+* Interfaces (exemplo 2)
+
+.code examples/interface_embedding.go HLINTERFACE
+
+
+* Interfaces (exemplo 3)
+
+.code examples/composition.go
 
 
 * Escopo

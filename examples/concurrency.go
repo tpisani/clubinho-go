@@ -10,12 +10,12 @@ func expensive() {
 	fmt.Println("expensive")
 }
 
-func fast() {
-	fmt.Println("fast")
+func cheap() {
+	fmt.Println("cheap")
 }
 
 func main() {
 	go expensive()
-	go fast()
+	go cheap()
 	time.Sleep(2 * time.Second)
 }
